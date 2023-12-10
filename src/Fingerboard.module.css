@@ -1,0 +1,28 @@
+.cell {
+  width: 18px;
+  height: 4px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.red {
+  background: var(--c-red);
+}
+
+.pink {
+  background: var(--c-pink);
+}
+
+.green {
+  background: var(--c-green);
+}
+
+.blue {
+  background: var(--c-blue);
+}
+
+.grey {
+  background: var(--c-surface1);
+}

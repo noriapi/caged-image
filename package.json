@@ -1,0 +1,21 @@
+{
+  "name": "caged-image",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@catppuccin/palette": "^0.2.0",
+    "solid-js": "^1.8.5"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "typescript-plugin-css-modules": "^5.0.2",
+    "vite": "^5.0.0",
+    "vite-plugin-solid": "^2.7.2"
+  }
+}

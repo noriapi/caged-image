@@ -1,0 +1,72 @@
+@import "@catppuccin/palette/style";
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --c-base: var(--ctp-latte-base);
+    --c-crust: var(--ctp-latte-crust);
+    --c-mantle: var(--ctp-latte-mantle);
+    --c-surface0: var(--ctp-latte-surface0);
+    --c-surface1: var(--ctp-latte-surface1);
+    --c-surface2: var(--ctp-latte-surface2);
+    --c-overlay0: var(--ctp-latte-overlay0);
+    --c-overlay1: var(--ctp-latte-overlay1);
+    --c-overlay2: var(--ctp-latte-overlay2);
+    --c-selection: rgba(var(--ctp-latte-surface2-raw), 0.5);
+
+    --c-text: var(--ctp-latte-text);
+
+    --c-red: var(--ctp-latte-red);
+    --c-pink: rgba(var(--ctp-latte-red-raw), 0.3);
+    --c-green: var(--ctp-latte-green);
+    --c-blue: var(--ctp-latte-blue);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --c-base: var(--ctp-mocha-base);
+    --c-crust: var(--ctp-mocha-crust);
+    --c-mantle: var(--ctp-mocha-mantle);
+    --c-surface0: var(--ctp-mocha-surface0);
+    --c-surface1: var(--ctp-mocha-surface1);
+    --c-surface2: var(--ctp-mocha-surface2);
+    --c-overlay0: var(--ctp-mocha-overlay0);
+    --c-overlay1: var(--ctp-mocha-overlay1);
+    --c-overlay2: var(--ctp-mocha-overlay2);
+    --c-selection: rgba(var(--ctp-mocha-surface2-raw), 0.5);
+
+    --c-text: var(--ctp-mocha-text);
+
+    --c-red: var(--ctp-mocha-red);
+    --c-pink: rgba(var(--ctp-mocha-red-raw), 0.3);
+    --c-green: var(--ctp-mocha-green);
+    --c-blue: var(--ctp-mocha-blue);
+  }
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: var(--c-text);
+  background-color: var(--c-base);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  text-decoration: inherit;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+}
