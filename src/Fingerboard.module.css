@@ -32,6 +32,9 @@
   0% {
     background-color: var(--c-pink);
   }
+  40% {
+    background-color: var(--c-pink);
+  }
   100% {
     background-color: var(--c-red);
   }
@@ -41,15 +44,18 @@
   0% {
     background-color: var(--c-surface1);
   }
+  40% {
+    background-color: var(--c-surface1);
+  }
   100% {
     background-color: var(--c-green);
   }
 }
 
 .glowing.red {
-  animation: glowing-pink-red 1300ms infinite alternate;
+  animation: 2.5s ease-in -1s infinite alternate glowing-pink-red;
 }
 
 .glowing.green {
-  animation: glowing-grey-green 1300ms infinite alternate;
+  animation: 2.5s ease-in -1s infinite alternate glowing-grey-green;
 }
