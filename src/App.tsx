@@ -1,4 +1,4 @@
-import { Component, For, createEffect, createSignal } from "solid-js";
+import { Component, For, createSignal } from "solid-js";
 import Fingerboard, { Cell } from "./Fingerboard";
 import styles from "./App.module.css";
 
@@ -85,10 +85,6 @@ gg_g_g_gP_G_Gg_g
 
 const App: Component = () => {
   const [tab, setTab] = createSignal("C");
-
-  createEffect(() => {
-    console.log(tab());
-  });
 
   return (
     <>
