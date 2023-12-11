@@ -95,6 +95,9 @@ gg_g_g_gP_G_Gg_g
 const App: Component = () => {
   const [tab, setTab] = createSignal("EMPTY");
 
+  const shape = () =>
+    ITEMS.find((item) => item.title === tab())?.shape ?? EMPTY;
+
   return (
     <>
       <h1>CAGED のイメージ</h1>
@@ -121,23 +124,10 @@ const App: Component = () => {
       <div
         classList={{
           [styles.tabcontent]: true,
-          [styles.none]: tab() !== "EMPTY",
         }}
       >
-        <Fingerboard shape={EMPTY} />
+        <Fingerboard shape={shape()} />
       </div>
-      <For each={ITEMS}>
-        {(item) => (
-          <div
-            classList={{
-              [styles.tabcontent]: true,
-              [styles.none]: tab() !== item.title,
-            }}
-          >
-            <Fingerboard shape={item.shape} />
-          </div>
-        )}
-      </For>
     </>
   );
 };

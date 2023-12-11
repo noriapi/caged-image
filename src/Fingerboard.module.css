@@ -1,6 +1,7 @@
 .cell {
   width: 18px;
   height: 4px;
+  transition: background 0.5s;
 }
 
 .hidden {
