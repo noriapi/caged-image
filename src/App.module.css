@@ -43,3 +43,13 @@
 .none {
   display: none;
 }
+
+.switchbox {
+  display: flex;
+  justify-content: end;
+  margin: 1rem;
+}
+
+.switch input {
+  accent-color: var(--c-green);
+}

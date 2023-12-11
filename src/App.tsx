@@ -98,9 +98,24 @@ const App: Component = () => {
   const shape = () =>
     ITEMS.find((item) => item.title === tab())?.shape ?? EMPTY;
 
+  const [glowing, setGlowing] = createSignal(false);
+
   return (
     <>
       <h1>CAGED のイメージ</h1>
+
+      <div class={styles.switchbox}>
+        <label class={styles.switch}>
+          <input
+            type="checkbox"
+            id="glowing"
+            name="glowing"
+            checked={glowing()}
+            onInput={(e) => setGlowing(e.target.checked)}
+          />
+          <span>Glow</span>
+        </label>
+      </div>
 
       {/* Tab links */}
       <div class={styles.tab}>
@@ -126,7 +141,7 @@ const App: Component = () => {
           [styles.tabcontent]: true,
         }}
       >
-        <Fingerboard shape={shape()} />
+        <Fingerboard shape={shape()} glowing={glowing()} />
       </div>
     </>
   );
