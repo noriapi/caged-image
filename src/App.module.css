@@ -40,10 +40,6 @@
   overflow-x: scroll;
 }
 
-.none {
-  display: none;
-}
-
 .switchbox {
   display: flex;
   justify-content: end;
