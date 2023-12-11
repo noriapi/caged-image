@@ -39,10 +39,10 @@ const ITEMS = [
     title: "C",
     shape: parseShape(`\
 GG_G_g_gP_g_GG_G
-GR_G_gg_g_g_GP_G
+GR_G_gg_g_g_GR_G
 G_G_gP_g_gg_G_G_
 G_GG_g_g_gP_G_GG
-G_GR_g_gg_g_G_GP
+G_GR_g_gg_g_G_GR
 GG_G_g_gP_g_GG_G
 `),
   },
