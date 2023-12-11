@@ -1,9 +1,9 @@
-import { Component, Index } from "solid-js";
+import { Component, Index, createEffect, createSignal, on } from "solid-js";
 import styles from "./Fingerboard.module.css";
 
 export type Cell = { type: "empty" } | { type: "filled"; color?: string };
 
-const Cell: Component<{ cell: Cell }> = (props) => {
+const Cell: Component<{ cell: Cell; glowing?: boolean }> = (props) => {
   return (
     <div
       classList={{
@@ -20,12 +20,29 @@ const Cell: Component<{ cell: Cell }> = (props) => {
         [styles.grey]:
           props.cell.type === "filled" &&
           (props.cell.color === "grey" || props.cell.color == null),
+        [styles.glowing]: props.glowing,
       }}
     />
   );
 };
 
-const Fingerboard: Component<{ shape: Cell[][] }> = (props) => {
+const Fingerboard: Component<{ shape: Cell[][]; glowing?: boolean }> = (
+  props,
+) => {
+  const [reset, setReset] = createSignal(false);
+
+  createEffect(
+    on(
+      () => props.shape,
+      () => {
+        setReset(true);
+        window.requestAnimationFrame(() => {
+          window.requestAnimationFrame(() => setReset(false));
+        });
+      },
+    ),
+  );
+
   return (
     <table>
       <tbody>
@@ -35,7 +52,7 @@ const Fingerboard: Component<{ shape: Cell[][] }> = (props) => {
               <Index each={row()}>
                 {(cell) => (
                   <td>
-                    <Cell cell={cell()} />
+                    <Cell cell={cell()} glowing={props.glowing && !reset()} />
                   </td>
                 )}
               </Index>

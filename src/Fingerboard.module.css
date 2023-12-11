@@ -27,3 +27,29 @@
 .grey {
   background: var(--c-surface1);
 }
+
+@keyframes glowing-pink-red {
+  0% {
+    background-color: var(--c-pink);
+  }
+  100% {
+    background-color: var(--c-red);
+  }
+}
+
+@keyframes glowing-grey-green {
+  0% {
+    background-color: var(--c-surface1);
+  }
+  100% {
+    background-color: var(--c-green);
+  }
+}
+
+.glowing.red {
+  animation: glowing-pink-red 1300ms infinite alternate;
+}
+
+.glowing.green {
+  animation: glowing-grey-green 1300ms infinite alternate;
+}
