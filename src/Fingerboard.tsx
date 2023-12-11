@@ -1,4 +1,4 @@
-import { Component, For } from "solid-js";
+import { Component, Index } from "solid-js";
 import styles from "./Fingerboard.module.css";
 
 export type Cell = { type: "empty" } | { type: "filled"; color?: string };
@@ -29,19 +29,19 @@ const Fingerboard: Component<{ shape: Cell[][] }> = (props) => {
   return (
     <table>
       <tbody>
-        <For each={props.shape}>
+        <Index each={props.shape}>
           {(row) => (
             <tr>
-              <For each={row}>
+              <Index each={row()}>
                 {(cell) => (
                   <td>
-                    <Cell cell={cell} />
+                    <Cell cell={cell()} />
                   </td>
                 )}
-              </For>
+              </Index>
             </tr>
           )}
-        </For>
+        </Index>
       </tbody>
     </table>
   );
