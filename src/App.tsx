@@ -25,6 +25,15 @@ const parseShape = (shape: string): Cell[][] => {
   return shape.split("\n").map(parseRow);
 };
 
+const EMPTY = parseShape(`\
+gg_g_g_gP_g_gg_g
+gP_g_gg_g_g_gP_g
+g_g_gP_g_gg_g_g_
+g_gg_g_g_gP_g_gg
+g_gP_g_gg_g_g_gP
+gg_g_g_gP_g_gg_g
+`);
+
 const ITEMS = [
   {
     title: "C",
@@ -84,7 +93,7 @@ gg_g_g_gP_G_Gg_g
 ] as const;
 
 const App: Component = () => {
-  const [tab, setTab] = createSignal("C");
+  const [tab, setTab] = createSignal("EMPTY");
 
   return (
     <>
@@ -99,7 +108,7 @@ const App: Component = () => {
                 [styles.active]: tab() === item.title,
               }}
               onClick={() => {
-                setTab(item.title);
+                setTab((t) => (t === item.title ? "EMPTY" : item.title));
               }}
             >
               {item.title}
@@ -109,6 +118,14 @@ const App: Component = () => {
       </div>
 
       {/* Tab contents */}
+      <div
+        classList={{
+          [styles.tabcontent]: true,
+          [styles.none]: tab() !== "EMPTY",
+        }}
+      >
+        <Fingerboard shape={EMPTY} />
+      </div>
       <For each={ITEMS}>
         {(item) => (
           <div
