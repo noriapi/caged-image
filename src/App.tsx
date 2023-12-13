@@ -49,12 +49,12 @@ GG_G_g_gP_g_GG_G
   {
     title: "A",
     shape: parseShape(`\
-gg_G_G_gP_g_gg_g
+gg_G_G_GP_g_gg_g
 gP_G_GG_g_g_gP_g
 g_G_GR_g_gg_g_g_
 g_GG_G_g_gP_g_gg
 g_GR_G_gg_g_g_gP
-gg_G_G_gP_g_gg_g
+gG_G_G_gP_g_gg_g
 `),
   },
   {
@@ -86,8 +86,8 @@ gg_g_g_gP_G_GG_g
 gP_g_gg_g_G_GR_g
 g_g_gP_g_GG_G_g_
 g_gg_g_g_GR_G_gg
-g_gP_g_gg_G_G_gP
-gg_g_g_gP_G_Gg_g
+g_gP_g_gG_G_G_gP
+gg_g_g_gR_G_Gg_g
 `),
   },
 ] as const;
